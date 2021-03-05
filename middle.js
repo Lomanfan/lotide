@@ -30,7 +30,7 @@ const eqArrays = function(arr1, arr2) {
 
 //assertArraysEqual
 // const assertArraysEqual = function(newArr1, newArr2) {
-  const assertArraysEqual = (newArr1, newArr2) => {
+const assertArraysEqual = (newArr1, newArr2) => {
   if (eqArrays(newArr1, newArr2)) {
     console.log(`✅ ${newArr1} === ${newArr2}`);
   } else {
