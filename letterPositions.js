@@ -1,24 +1,30 @@
 
 const letterPositions = function(sentence) {
   let results = {};   // object {}
-
+  let sentenceLtrsArray = sentence.split("");
+  for (i = 0; i < sentenceLtrsArray.length; i++) {
+    if (sentenceLtrsArray[i] !== [" "]) {
+      if (results[sentenceLtrsArray[i]]) {
+        //console.log("there are results",results);
+        results[sentenceLtrsArray[i]].push(i);
+      } else {
+        results[sentenceLtrsArray[i]] = [i];
+      }
+    }
+  }
   return results;
-
 };
 
+console.log(letterPositions("hello"));
 
 
-const assertEqual = function(actual,expected) {
-  if (actual === expected) {
-    console.log(`✅ ${actual} === ${expected}`);
+const assertArraysEqual = function(newArr1, newArr2) {
+  if (eqArrays(newArr1, newArr2)) {
+    console.log(`✅ ${newArr1} === ${newArr2}`);
   } else {
-    console.log(`❌ ${actual} !== ${expected}`);
+    console.log(`❌ ${newArr1} !== ${newArr2}`);
   }
 };
-
-
-//Implement a function eqArrays which takes in two arrays and
-//returns true or false, based on a perfect match.
 
 const eqArrays = function(arr1, arr2) {
   if (arr1.length !== arr2.length) {
@@ -31,3 +37,5 @@ const eqArrays = function(arr1, arr2) {
   }
   return true;
 };
+
+assertArraysEqual(letterPositions("hello").e, [1]);
