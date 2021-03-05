@@ -23,3 +23,10 @@ const assertArraysEqual = function(newArr1, newArr2) {
 
 assertArraysEqual([1,2,3],[1,2,3]);
 
+/*const assertEqual = function(actual,expected) {
+  if (actual === expected) {
+    console.log(`✅ ${actual} === ${expected}`);
+  } else {
+    console.log(`❌ ${actual} !== ${expected}`);
+  }
+}; */
