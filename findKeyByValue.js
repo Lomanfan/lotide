@@ -6,19 +6,28 @@
 
 
 const findKeyByValue = function(bestTVShowsByGenre, showName) { //bestTVShowByGenre {}, showName ""
-  let byGenre = {};                                 //Object {}
+// let byGenre = {};                                 //Object {}
   let tvKey = Object.keys(bestTVShowsByGenre);  //Object.keys() returns an array of KEYS
-  for (let i = 0; i < tvKey.length; i++) {
-    let name = bestTVShowsByGenre[tvKey[i]]
-    console.log(name);   //Why only one name return??????
-    if (name === showName) {
-      byGenre = bestTVShowsByGenre[tvKey[i]];
-    } else {
-      undefined;
+  // console.log(tvKey);
+  for (const key of tvKey) {
+    if (bestTVShowsByGenre[key] === showName) {
+      return key;
     }
-    return byGenre;
   }
 };
+  // for (let i = 0; i < tvKey.length; i++) {
+  //   let name = bestTVShowsByGenre[tvKey[i]]
+  //   console.log(name);   //Why only one name return??????
+  //   if (name === showName) {
+  //     byGenre = bestTVShowsByGenre[tvKey[i]];
+  //   return byGenre;
+  //   console.log(byGenre);
+  //   } else {
+  //     undefined;
+  //   }
+  // }
+  // return byGenre;
+  // };
 
 //Test Assertions:
 const bestTVShowsByGenre = {
@@ -30,16 +39,13 @@ const bestTVShowsByGenre = {
 // console.log(findKeyByValue(bestTVShowsByGenre,"The Wire"));
 
 
+const assertEqual = function(actual,expected) {
+  if (actual === expected) {
+    console.log(`✅ ${actual} === ${expected}`);
+  } else {
+    console.log(`❌ ${actual} !== ${expected}`);
+  }
+};
 
-// const assertEqual = function(actual,expected) {
-//   if (actual === expected) {
-//     console.log(`✅ ${actual} === ${expected}`);
-//   } else {
-//     console.log(`❌ ${actual} !== ${expected}`);
-//   }
-// };
-
-
-
-// assertEqual(findKeyByValue(bestTVShowsByGenre, "The Wire"), "drama");
-// assertEqual(findKeyByValue(bestTVShowsByGenre, "That '70s Show"), undefined);
+assertEqual(findKeyByValue(bestTVShowsByGenre, "The Wire"), "drama");
+assertEqual(findKeyByValue(bestTVShowsByGenre, "That '70s Show"), undefined);
