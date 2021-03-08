@@ -15,28 +15,6 @@
 // middle([1, 2, 3, 4, 5, 6]) // => [3, 4]
 
 
-//eqArrays
-const eqArrays = function(arr1, arr2) {
-  if (arr1.length !== arr2.length) {
-    return false;
-  }
-  for (let i = 0; i < arr1.length; i++) {
-    if (arr1[i] !== arr2[i]) {
-      return false;
-    }
-  }
-  return true;
-};
-
-//assertArraysEqual
-// const assertArraysEqual = function(newArr1, newArr2) {
-const assertArraysEqual = (newArr1, newArr2) => {
-  if (eqArrays(newArr1, newArr2)) {
-    console.log(`✅ ${newArr1} === ${newArr2}`);
-  } else {
-    console.log(`❌ ${newArr1} !== ${newArr2}`);
-  }
-};
 
 //find Middle
 const middle = function(array) {
@@ -52,6 +30,8 @@ const middle = function(array) {
   return midArr;
 };
 
+module.exports = middle;
+
 //arrayY= [5, 2, 6, 4, 9, 12, 18, 13, 1, 17, 25, 33, 55, 62,66];
 //console.log(arrayY.length);
 //console.log(middle(arrayY));
@@ -61,9 +41,9 @@ const middle = function(array) {
 // console.log(middle([1, 2, 3, 4]));
 // console.log(middle([1, 2, 3, 4, 5, 6]));
 
-console.log(assertArraysEqual(middle([1, 2, 3]), [2]));
+// console.log(assertArraysEqual(middle([1, 2, 3]), [2]));
 
-console.log(assertArraysEqual(middle([1, 2, 3]), [1, 2]));
-console.log(assertArraysEqual(middle([1, 2, 3, 4, 5]), [2, 3]));
+// console.log(assertArraysEqual(middle([1, 2, 3]), [1, 2]));
+// console.log(assertArraysEqual(middle([1, 2, 3, 4, 5]), [2, 3]));
 
-console.log(eqArrays([1,2],[1,2]));
+// console.log(eqArrays([1,2],[1,2]));
