@@ -1,11 +1,10 @@
 
 const letterPositions = function(sentence) {
-  let results = {};   // object {}
+  let results = {};   
   let sentenceLtrsArray = sentence.split("");
   for (i = 0; i < sentenceLtrsArray.length; i++) {
     if (sentenceLtrsArray[i] !== [" "]) {
       if (results[sentenceLtrsArray[i]]) {
-        //console.log("there are results",results);
         results[sentenceLtrsArray[i]].push(i);
       } else {
         results[sentenceLtrsArray[i]] = [i];
