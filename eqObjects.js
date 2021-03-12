@@ -1,11 +1,4 @@
-//For Objects Comparison
-// Returns true if both objects have identical keys with identical values.
-// Otherwise you get back a big fat false!
 
-
-//pseudo codes: 
-// if each objt1 key !== objt2 key stop, output false;
-// if objt1[key] (value)=== objt2[key] (value), out out true.
 const eqArrays = function (arr1, arr2) {
   if (arr1.length !== arr2.length) {
     return false;
@@ -23,7 +16,6 @@ const eqObjects = function (object1, object2) {
     return false;
   }
   for (const key in object1) {
-    // console.log(object1[key]);
     if (object1[key] !== object2[key]) {
      return false;
     }
@@ -45,8 +37,5 @@ const abc = { a: "1", b: "2", c: "3" };
 
 console.log(eqObjects(ab, ba));
 console.log(eqObjects(ab, abc));
-
 assertEqual(eqObjects(ab, ba), true); // => true
-
 eqObjects(ab, abc); 
-// => false
