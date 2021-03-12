@@ -8,8 +8,6 @@ const assertEqual = function(actual,expected) {
 
 module.exports = assertEqual;
 
-
-
 // assertEqual("Lighthouse Labs", "Bootcamp");
 // assertEqual("Bootcamp", "Bootcamp");
 // assertEqual(1, 1);
@@ -19,9 +17,6 @@ module.exports = assertEqual;
 
 Exp. 1 -- console.assert(1 === 1); // => nothing happens because true
 Exp. 2 -- console.assert(1 === 1.1); // => prints out "Assertion failed" to the terminal
-
-
-
 Exp. 3--- const sumBuggy = function(a, b) {
   return a * b;
 }
