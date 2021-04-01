@@ -30,5 +30,5 @@ The following functions are currently implemented:
 * `function2(eqArrays)`: for arrays comparison
 * `function3(eqObjects)`: for objects comparison
     ... ...
-    
+
 Please find README.md for more details on functions included in this package. 

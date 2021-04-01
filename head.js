@@ -1,16 +1,18 @@
-// const assertEqual = require('./assertEqual');
+//Create a function head which returns the first item in the array.
 
-const head = function(x) {
-  if (x.length === 0) {
+const assertEqual = require('./assertEqual');
+
+const head = function (array) {
+  if (!array.length) {
     return undefined;
   } else {
-    return x[0];
+    return array[0];
   }
 };
 
-module.exports = head;
+assertEqual(head([5, 6, 7]), 5);
+assertEqual(head(["Hello", "Lighthouse", "Labs"]), "Hello");
+assertEqual(head([]), 5);
+assertEqual(head([6]), 5);
 
-// assertEqual(head([5,6,7]), 5);
-// assertEqual(head(["Hello", "Lighthouse", "Labs"]), "Hello");
-// assertEqual(head([]), 5);
-// assertEqual(head([6]), 5);
+module.exports = head;
