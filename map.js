@@ -40,3 +40,6 @@ const assertArraysEqual = function(newArr1, newArr2) {
 };
 
 assertArraysEqual(results1,results2);
+
+
+module.exports = map;

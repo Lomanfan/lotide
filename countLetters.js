@@ -28,3 +28,6 @@ const countLetters = function(str) {
 
 console.log(countLetters('LHL'));
 console.log(countLetters('Lighthouse is Lit'));
+
+
+module.exports = countLetters;
