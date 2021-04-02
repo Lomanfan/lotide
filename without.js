@@ -21,5 +21,4 @@ const without = function (sourceArray, itemsToRemove) {
 // console.log(without(words, ["lighthouse"])); // ==> [ 'hello', 'world' ]
 // assertArraysEqual(words, ["hello", "world", "lighthouse"]); //To check & make sure original array was not altered. 
 
-
 module.exports = without;
