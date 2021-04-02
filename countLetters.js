@@ -32,7 +32,6 @@ const countLetters = function (str) {
 //         letterTotal[strArray[i]] = 1;
 //       }
 //     }
-
 //   }
 //   return letterTotal; //{}
 // };
