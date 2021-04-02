@@ -1,31 +1,43 @@
-const assertEqual = function(actual,expected) {
-  if (actual === expected) {
-    console.log(`✅ ${actual} === ${expected}`);
-  } else {
-    console.log(`❌ ${actual} !== ${expected}`);
-  }
+//Method 1:
+
+const removeSpace = function (str) {
+  return str.replace(/\s/g, '');
 };
 
-const countLetters = function(str) {
-  let letterTotal = {}; // {} object
-  let strArray = str.split(''); //''split after each letter
-  //str2 = "123,240,432"
-  //str2.split(",")>> [123,240,432]
-  //console.log(strArray);
+const countLetters = function (str) {
+  const noSpaceStr = removeSpace(str);
+  let letterTotal = {};
 
-  for (let i = 0; i < strArray.length; i++) {
-    if (strArray[i] !== " ") {
-      if (letterTotal[strArray[i]]) {
-        letterTotal[strArray[i]] += 1;
-      } else {
-        letterTotal[strArray[i]] = 1;
-      }
+  for (let ltr of noSpaceStr) {
+    if (letterTotal[ltr]) {
+      letterTotal[ltr] += 1;
+    } else {
+      letterTotal[ltr] = 1;
     }
-
   }
-  return letterTotal; //return key value pair object;
+  return letterTotal;
 };
 
+
+//Method 2:
+// const countLetters = function(str) {
+//   let letterTotal = {};
+//   let strArray = str.split('');
+
+//   for (let i = 0; i < strArray.length; i++) {
+//     if (strArray[i] !== " ") {
+//       if (letterTotal[strArray[i]]) {
+//         letterTotal[strArray[i]] += 1;
+//       } else {
+//         letterTotal[strArray[i]] = 1;
+//       }
+//     }
+
+//   }
+//   return letterTotal; //{}
+// };
+
+// TEST CODE:
 console.log(countLetters('LHL'));
 console.log(countLetters('Lighthouse is Lit'));
 
