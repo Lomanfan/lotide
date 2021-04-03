@@ -1,22 +1,20 @@
-//The function will return a "slice of the array with elements taken from the beginning." 
-//It should keep going until the callback/predicate returns a truthy value.
-//Implement takeUntil which will keep collecting items from a provided array 
-//until the callback provided returns a truthy value.
 
+//The function keeps collecting items until callback retuns a truthy value. 
+//Then results return the collection of items.
 
 const takeUntil = function (array, callback) {
   const results = [];
-  for (let item of array) {
-    if (callback(item)) {
+  for (let arr of array) {
+    if (callback(arr)) {
       return results;
     } else {
-      results.push(item);
+      results.push(arr);
     }
   }
   return results;
 };
 
-// //Expected Input
+//TEST CODE:
 const data1 = [1, 2, 5, 7, 2, -1, 2, 4, 5];
 const results1 = takeUntil(data1, x => x < 0);
 console.log(results1);
@@ -26,14 +24,12 @@ const results2 = takeUntil(data2, x => x === ',');
 console.log(results2);
 
 
-//Expected Output
+//EXPECTED OUTPUT:
 // [ 1, 2, 5, 7, 2 ]
-// ---
 // [ 'I\'ve', 'been', 'to', 'Hollywood' ]
-console.log('---------------------------------------');
 
-// Test with assertArraysEquals
-const eqArrays = function(arr1, arr2) {
+
+const eqArrays = function (arr1, arr2) {
   for (let i = 0; i < arr1.length; i++) {
     if (arr1[i] !== arr2[i]) {
       return false;
@@ -42,7 +38,7 @@ const eqArrays = function(arr1, arr2) {
   return true;
 };
 
-const assertArraysEqual = function(newArr1, newArr2) {
+const assertArraysEqual = function (newArr1, newArr2) {
   if (eqArrays(newArr1, newArr2)) {
     console.log(`✅ ${newArr1} === ${newArr2}`);
   } else {
@@ -55,4 +51,3 @@ assertArraysEqual(results2, ['I\'ve', 'been', 'to', 'Hollywood']);
 
 
 module.exports = takeUntil;
-
