@@ -1,35 +1,24 @@
 
-//Task:
-//It should scan the object and return the first key which contains the given value.
-//If no key with that given value is found, then it should return undefined.
-
-
-
-const findKeyByValue = function(bestTVShowsByGenre, showName) { //bestTVShowByGenre {}, showName ""
-// let byGenre = {};                                 //Object {}
-  let tvKey = Object.keys(bestTVShowsByGenre);  //Object.keys() returns an array of KEYS
-  // console.log(tvKey);
-  for (const key of tvKey) {
+//Method 1:
+const findKeyByValue = function (bestTVShowsByGenre, showName) {
+  let keys = Object.keys(bestTVShowsByGenre);
+  for (const key of keys) {
     if (bestTVShowsByGenre[key] === showName) {
       return key;
     }
   }
 };
-  // for (let i = 0; i < tvKey.length; i++) {
-  //   let name = bestTVShowsByGenre[tvKey[i]]
-  //   console.log(name);   //Why only one name return??????
-  //   if (name === showName) {
-  //     byGenre = bestTVShowsByGenre[tvKey[i]];
-  //   return byGenre;
-  //   console.log(byGenre);
-  //   } else {
-  //     undefined;
-  //   }
-  // }
-  // return byGenre;
-  // };
 
-//Test Assertions:
+//Method 2:
+// const findKeyByValue = function(bestTVShowsByGenre, showName) {
+//   for (const [key, value] of Object.entries(bestTVShowsByGenre)) {
+//     if (value === showName) {
+//       return key;
+//     }
+//   }
+// };
+
+//TEST CODE:
 const bestTVShowsByGenre = {
   sci_fi: "The Expanse",
   comedy: "Brooklyn Nine-Nine",
@@ -38,8 +27,7 @@ const bestTVShowsByGenre = {
 
 // console.log(findKeyByValue(bestTVShowsByGenre,"The Wire"));
 
-
-const assertEqual = function(actual,expected) {
+const assertEqual = function (actual, expected) {
   if (actual === expected) {
     console.log(`✅ ${actual} === ${expected}`);
   } else {
@@ -52,3 +40,5 @@ assertEqual(findKeyByValue(bestTVShowsByGenre, "That '70s Show"), undefined);
 
 
 module.exports = findKeyByValue;
+
+
