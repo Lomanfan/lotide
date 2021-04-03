@@ -1,3 +1,4 @@
+//recreate a map function instead of using the built-in map function:
 
 const map = function(array, callback) {
 
