@@ -1,24 +1,41 @@
 
-const letterPositions = function(sentence) {
-  let results = {};   // object {}
-  let sentenceLtrsArray = sentence.split("");
-  for (i = 0; i < sentenceLtrsArray.length; i++) {
-    if (sentenceLtrsArray[i] !== [" "]) {
-      if (results[sentenceLtrsArray[i]]) {
-        //console.log("there are results",results);
-        results[sentenceLtrsArray[i]].push(i);
+//Method 1:
+const letterPositions = function (sentence) {
+  const results = {};
+
+  for (let i = 0; i < sentence.length; i++) {
+    if (sentence[i] !== [" "]) {
+      if (results[sentence[i]]) {
+        results[sentence[i]].push(i);
       } else {
-        results[sentenceLtrsArray[i]] = [i];
+        results[sentence[i]] = [i];     //[]
       }
     }
   }
   return results;
 };
 
+
+//Method 2:
+// const letterPositions = function(sentence) {
+//   const results = {};
+
+//   sentence.split('').forEach((ltr, index) => {
+//     if (results[ltr]) {
+//       results[ltr].push(index);
+//     } else {
+//       results[ltr] = [index];    //[]
+//     }
+//   });
+//   return results;
+// };
+
+
+//TEST CODE:
 console.log(letterPositions("hello"));
 
 
-const assertArraysEqual = function(newArr1, newArr2) {
+const assertArraysEqual = function (newArr1, newArr2) {
   if (eqArrays(newArr1, newArr2)) {
     console.log(`✅ ${newArr1} === ${newArr2}`);
   } else {
@@ -26,7 +43,7 @@ const assertArraysEqual = function(newArr1, newArr2) {
   }
 };
 
-const eqArrays = function(arr1, arr2) {
+const eqArrays = function (arr1, arr2) {
   if (arr1.length !== arr2.length) {
     return false;
   }
@@ -42,3 +59,5 @@ assertArraysEqual(letterPositions("hello").e, [1]);
 
 
 module.exports = letterPositions;
+
+
