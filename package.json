@@ -1,7 +1,7 @@
 {
   "name": "@lomanfan/lotide",
   "version": "1.0.0",
-  "description": "",
+  "description": "A mini clone of the [Lodash](https://lodash.com) library.",
   "main": "assertArraysEqual.js",
   "directories": {
     "test": "test"
@@ -20,7 +20,10 @@
   },
   "homepage": "https://github.com/Lomanfan/lotide#readme",
   "devDependencies": {
-    "chai": "^4.3.3",
+    "chai": "^4.3.4",
     "mocha": "^8.3.1"
+  },
+  "dependencies": {
+    "fsevents": "^2.3.2"
   }
 }
