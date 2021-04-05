@@ -10,13 +10,13 @@ const tail = function (array) {
 
 
 //TEST CODE:
-const result = tail(["Hello", "Lighthouse", "Labs"]);
-assertEqual(result, ["Lighthouse", "Labs"]); // => will always fail! JavaScript doesn't allow the use of === or == to compare two arrays.
+// const result = tail(["Hello", "Lighthouse", "Labs"]);
+// // assertEqual(result, ["Lighthouse", "Labs"]); // => will always fail! JavaScript doesn't allow the use of === or == to compare two arrays.
 
 // TEST CODE TO ENSURE ORIGINAL ARRAY IS NOT MODIFIED FROM TAIL FUNCTION:
-const words = ["Yo Yo", "Lighthouse", "Labs"];
-tail(words); // no need to capture the return value since we are not checking it
-assertEqual(words.length, 3); // original array should still have 3 elements!
+// const words = ["Yo Yo", "Lighthouse", "Labs"];
+// tail(words); // no need to capture the return value since we are not checking it
+// assertEqual(words.length, 3); // original array should still have 3 elements!
 
 
 module.exports = tail;
